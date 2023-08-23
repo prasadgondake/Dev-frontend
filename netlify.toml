@@ -1,9 +1,5 @@
 # netlify.toml
 
-[build]
-  publish = "client/build"
-  command = "npm run build"
-
 [[redirects]]
   from = "/api/*"
   to = "https://dev-backend-u1s9.onrender.com/:splat"
