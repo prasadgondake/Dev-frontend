@@ -1,4 +1,23 @@
+# netlify.toml
+
+[build]
+  publish = "client/build"
+  command = "npm run build"
+
 [[redirects]]
-from="/*"
-to="/index.html"
-status=404
+  from = "/api/*"
+  to = "https://dev-backend-u1s9.onrender.com/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "https://devconnecter910.netlify.app"
+    Access-Control-Allow-Headers = "Origin, X-Requested-With, Content-Type, Accept"
+    Access-Control-Allow-Methods = "GET, POST, PUT, DELETE, OPTIONS"
